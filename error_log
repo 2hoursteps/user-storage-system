@@ -1,0 +1,73 @@
+[15-Mar-2018 18:13:31 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:13:31 UTC] PHP Notice:  Undefined index: _basejson in /home/mpf/public_html/user-storage-system/class.baseuserstorage.php on line 107
+[15-Mar-2018 18:13:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method basejson::saveuserfile() in /home/mpf/public_html/user-storage-system/class.basejson.php:176
+Stack trace:
+#0 /home/mpf/public_html/user-storage-system/class.basejson.php(248): basejson->CreateUser('mpf', 'mpfrenette@gmai...', 'test1')
+#1 {main}
+  thrown in /home/mpf/public_html/user-storage-system/class.basejson.php on line 176
+[15-Mar-2018 18:14:41 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:14:41 UTC] PHP Notice:  Undefined index: _basejson in /home/mpf/public_html/user-storage-system/class.baseuserstorage.php on line 107
+[15-Mar-2018 18:14:41 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:14:41 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:15:03 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:15:03 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:15:03 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:15:53 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:15:53 UTC] PHP Notice:  Undefined index: _basejson in /home/mpf/public_html/user-storage-system/class.baseuserstorage.php on line 107
+[15-Mar-2018 18:15:53 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:15:53 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:16:16 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:16:16 UTC] PHP Notice:  Undefined index: _basejson in /home/mpf/public_html/user-storage-system/class.baseuserstorage.php on line 107
+[15-Mar-2018 18:16:16 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:16:16 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:16:33 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:16:33 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:16:33 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:17:14 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:17:14 UTC] PHP Notice:  Undefined index: _basejson in /home/mpf/public_html/user-storage-system/class.baseuserstorage.php on line 107
+[15-Mar-2018 18:17:14 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:17:14 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:18:46 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:18:46 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:18:46 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:19:14 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:19:14 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:19:14 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:19:39 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:19:39 UTC] PHP Notice:  Undefined index: _basejson in /home/mpf/public_html/user-storage-system/class.baseuserstorage.php on line 107
+[15-Mar-2018 18:19:39 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:19:39 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:20:02 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:20:02 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:20:02 UTC] PHP Notice:  Undefined variable: contents in /home/mpf/public_html/user-storage-system/class.basejson.php on line 107
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Notice:  Undefined index: _basejson in /home/mpf/public_html/user-storage-system/class.baseuserstorage.php on line 107
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:26 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:39 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:47 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:47 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:47 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:47 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:47 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:47 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:47 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:47 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:48 UTC] PHP Warning:  Illegal string offset '_basejson' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147
+[15-Mar-2018 18:20:48 UTC] PHP Warning:  Illegal string offset 'seed' in /home/mpf/public_html/user-storage-system/class.basejson.php on line 147

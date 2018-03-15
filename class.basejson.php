@@ -1,6 +1,6 @@
 <?
 /**
- * Baseyaml class by Martin-Pierre Frenette 
+ * Basejson class by Martin-Pierre Frenette 
  * Published under the GPL licenses.
  * 
  * Website: www.mpfrenette.com
@@ -10,14 +10,12 @@
  * 
  * Created in under 2 hours for the 2 hour code Challenge: www.2hourcode.com
  *
- * This class is a very, very basic user storage class which saves in a yaml
+ * This class is a very, very basic user storage class which saves in a json
  * file user data.
  *
- * It needs the yaml PECL library installed in PHP.
- *
- * It needs the file class.baseyaml.config.php which only has 2 constants:
- * BASEYAML_STORAGE_DIRECTORY : which indicates in which non-web accessible directory to place your files
- * BASEYAML_CONFIG_FILE: which indicates the file in that directory to store the default config in.
+ * It needs the file class.basejson.config.php which only has 2 constants:
+ * BASEJSON_STORAGE_DIRECTORY : which indicates in which non-web accessible directory to place your files
+ * BASEJSON_CONFIG_FILE: which indicates the file in that directory to store the default config in.
  *
  * The system is rather simple: you simply create an instance of the class and call the public functions.
  * 
@@ -33,14 +31,14 @@
  *
  * If you modify values, make sure to call "saveuserdata" to commit to disk.
  *
- * It's that simple, but it was written in less than 2 hours... 
+ * It's that simple, but it was written in less than 2 hours... n fact, it was made in 22 minutes.
  */
 
 require_once( 'class.baseuserstorage.php');
 
-define(  "BASEYAML_APP_KEY", '_baseyaml');
+define(  "BASEJSON_APP_KEY", '_basejson');
 
-class baseyaml extends baseuserstorage{
+class basejson extends baseuserstorage{
 
 	// this is the class config itself
 	var $config = array();
@@ -59,33 +57,57 @@ class baseyaml extends baseuserstorage{
 	 */
 	public function __construct(){
 
-		if ( !extension_loaded('yaml')){
-			echo 'Error: the YAML library is not loaded. You can use PECL to install it';
-			exit();		
+		
+		if ( is_file('class.basejson.config.php')){
+			require_once('class.basejson.config.php');
 
-		}
-
-		if ( is_file('class.baseyaml.config.php')){
-			require_once('class.baseyaml.config.php');
-
-			if ( !is_dir(BASEYAML_STORAGE_DIRECTORY) && !mkdir(BASEYAML_STORAGE_DIRECTORY) ){
-				echo 'Error: class.baseyaml.php is not able to create the directory:'. BASEYAML_STORAGE_DIRECTORY;
+			if ( !is_dir(BASEJSON_STORAGE_DIRECTORY) && !mkdir(BASEJSON_STORAGE_DIRECTORY) ){
+				echo 'Error: class.basejson.php is not able to create the directory:'. BASEJSON_STORAGE_DIRECTORY;
 				exit();		
 			
 			}
-			if ( !is_file(BASEYAML_STORAGE_DIRECTORY. BASEYAML_CONFIG_FILE)){
+			if ( !is_file(BASEJSON_STORAGE_DIRECTORY. BASEJSON_CONFIG_FILE)){
 				$this->CreateDefaultConfig();
 			}
 			$this->LoadConfig();
 			
 		}
 		else{
-			echo 'Error: class.baseyaml.config.php is not found';
+			echo 'Error: class.basejson.config.php is not found';
 			exit();
 		}
 
 
 	}
+
+	/**
+	 * This function will take the array, encode it to json and save it to disk.
+	 * @param string $filename the file name to save to
+	 * @param array $array    the data to save
+	 * @return int 			  the return from the file_put_contents function 
+	 */
+	protected function WriteJsonToFile($filename, $array){
+
+		$filecontent = json_encode($array);
+		return (file_put_contents ($filename, $filecontent) >0);
+
+
+	}
+
+	/**
+	 * This function will read and parse json content from the 
+	 * file and return it as an array.
+	 * 
+	 * @param [type] $filename  the file to read
+	 * @return array 			the content of the file, parse into an array
+	 */
+	protected function ReadJsonFromFile($filename){
+
+		$filecontent = file_get_contents($filename);
+		return json_decode($filecontent, true);
+
+	}
+
 	/**
 	 * At this moment, the config only stores a random seed.
 	 */
@@ -94,10 +116,10 @@ class baseyaml extends baseuserstorage{
 		$values= array();
 
 		// for this purpose, we only need a random seed, so sha1 is enough.
-		$values[BASEYAML_APP_KEY]['seed'] = sha1(openssl_random_pseudo_bytes(16));
+		$values[BASEJSON_APP_KEY]['seed'] = sha1(openssl_random_pseudo_bytes(16));
 
-		if ( !yaml_emit_file(BASEYAML_STORAGE_DIRECTORY. BASEYAML_CONFIG_FILE, $values) ){
-			echo 'Error: unable to create the '. BASEYAML_STORAGE_DIRECTORY. BASEYAML_CONFIG_FILE. ' file. ';
+		if ( !$this->WriteJsonToFile(BASEJSON_STORAGE_DIRECTORY. BASEJSON_CONFIG_FILE, $values) ){
+			echo 'Error: unable to create the '. BASEJSON_STORAGE_DIRECTORY. BASEJSON_CONFIG_FILE. ' file. ';
 			exit();
 
 		}
@@ -106,11 +128,11 @@ class baseyaml extends baseuserstorage{
 	 * This function, called in the constructor, simply loads the general config
 	 */
 	protected function LoadConfig(){
-		$this->config = yaml_parse_file(BASEYAML_STORAGE_DIRECTORY. BASEYAML_CONFIG_FILE);
+		$this->config = $this->ReadJsonFromFile(BASEJSON_STORAGE_DIRECTORY. BASEJSON_CONFIG_FILE);
 	}
 
 	/**
-	 * The userfile name is stored using the sha1 function, which is NOT secured, but it's enough
+	 * The userdata filename is stored using the sha1 function, which is NOT secured, but it's enough
 	 * to save a user file. Yes, a collision might occur, but it should be rather rare.
 	 *
 	 * The seed is added so that if the class is used in different places, it will be different
@@ -122,7 +144,7 @@ class baseyaml extends baseuserstorage{
 	 * @param string $username The username to load
 	 */
 	protected function GetUserFileName($username){
-		return  BASEYAML_STORAGE_DIRECTORY. sha1($username . $this->config[BASEYAML_APP_KEY]['seed']). '.yaml';
+		return  BASEJSON_STORAGE_DIRECTORY. sha1($username . $this->config[BASEJSON_APP_KEY]['seed']). '.json';
 	}
 
 	/**
@@ -150,8 +172,8 @@ class baseyaml extends baseuserstorage{
 			$values['created'] = date(DATE_ATOM);
 			$values['lastlogin'] = date(DATE_ATOM);
 			$values['password'] = password_hash( $password, PASSWORD_BCRYPT );
-			$this->setuservalue(BASEYAML_APP_KEY, null, $values );
-			$this->saveuserfile($username);
+			$this->setuservalue(BASEJSON_APP_KEY, null, $values );
+			$this->saveuserdata($username);
 			return $this->loaduserdata($username);
 		}
 		else{
@@ -166,10 +188,10 @@ class baseyaml extends baseuserstorage{
 	 */
 	public function SaveUserData($username = null){
 		if ( $username == null){
-			$username = $this->getuservalue(BASEYAML_APP_KEY, 'username');
+			$username = $this->getuservalue(BASEJSON_APP_KEY, 'username');
 		}
 		$filename = $this->GetUserFileName($username);
-		return yaml_emit_file($filename, $this->userdata);
+		return $this->WriteJsonToFile($filename, $this->userdata);
 	}
 	/**
 	 * This function loads the user data from disk
@@ -178,11 +200,12 @@ class baseyaml extends baseuserstorage{
 	 */
 	public function LoadUserData($username = null){
 		if ( $username == null){
-			$username = $this->getuservalue(BASEYAML_APP_KEY, 'username');
+			$username = $this->getuservalue(BASEJSON_APP_KEY, 'username');
 		}
 		$filename = $this->GetUserFileName($username);
+
 		if ( is_file($filename)){
-			$this->userdata =yaml_parse_file($filename);
+			$this->userdata =$this->ReadJsonFromFile($filename);
 			return true;
 		}
 		else{
@@ -201,9 +224,9 @@ class baseyaml extends baseuserstorage{
 	 */
 	public function login($username, $password){
 		if ($this->loaduserdata($username)){
-			$hashedpassword = $this->getuservalue(BASEYAML_APP_KEY, 'password');
+			$hashedpassword = $this->getuservalue(BASEJSON_APP_KEY, 'password');
 			if ( password_verify($password, $hashedpassword)){
-				$this->setuservalue(BASEYAML_APP_KEY, 'lastlogin', date(DATE_ATOM));
+				$this->setuservalue(BASEJSON_APP_KEY, 'lastlogin', date(DATE_ATOM));
 				$this->saveuserdata();
 				return true;
 			}
@@ -222,11 +245,11 @@ class baseyaml extends baseuserstorage{
  */
 
 /*
-$baseyaml = new baseyaml();
-if ( $baseyaml->createuser('mpf', 'mpfrenette@gmail.com', 'test1')){
+$baseJSON = new baseJSON();
+if ( $baseJSON->createuser('mpf', 'mpfrenette@gmail.com', 'test1')){
 	echo "created";	
 }
-if ( $baseyaml->login('mpf',  'test1') ){
+if ( $baseJSON->login('mpf',  'test1') ){
 	echo "Logged in";
 }
 else{
